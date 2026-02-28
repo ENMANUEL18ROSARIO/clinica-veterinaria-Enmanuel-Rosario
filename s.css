@@ -1,0 +1,206 @@
+/* ===================================================== */
+/* VARIABLES CSS - PALETA DE COLORES PERSONALIZADA */
+/* ===================================================== */
+
+:root {
+    --color-primario: #2C3E50;
+    --color-secundario: #18BC9C;
+    --color-acento: #F39C12;
+    --color-blanco: #ffffff;
+    --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transicion: all 0.3s ease-in-out;
+}
+
+/* ===================================================== */
+/* CONFIGURACIÓN GLOBAL */
+/* ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Scroll suave entre secciones */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 70px; /* Espacio por navbar fija */
+}
+
+/* ===================================================== */
+/* NAVBAR PERSONALIZADA */
+/* ===================================================== */
+
+.custom-navbar {
+    background-color: var(--color-primario);
+}
+
+.navbar .nav-link:hover {
+    color: var(--color-acento) !important;
+}
+
+/* ===================================================== */
+/* HERO SECTION */
+/* ===================================================== */
+
+.hero-section {
+    background-image: url("https://images.unsplash.com/photo-1583337130417-3346a1be7dee");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 62, 80, 0.7);
+    top: 0;
+    left: 0;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===================================================== */
+/* TARJETAS SERVICIOS */
+/* ===================================================== */
+
+.service-card {
+    transition: var(--transicion);
+    border-radius: 15px;
+}
+
+.service-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ===================================================== */
+/* TARJETAS EQUIPO */
+/* ===================================================== */
+
+.team-card {
+    border-radius: 20px;
+    transition: var(--transicion);
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+.team-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid var(--color-secundario);
+}
+
+/* ===================================================== */
+/* CONTACTO */
+/* ===================================================== */
+
+.contact-card {
+    background-color: var(--color-blanco);
+    transition: var(--transicion);
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+form input, 
+form textarea {
+    border-radius: 10px;
+}
+
+form button {
+    background-color: var(--color-secundario);
+    border: none;
+    transition: var(--transicion);
+}
+
+form button:hover {
+    background-color: var(--color-acento);
+}
+
+/* ===================================================== */
+/* FOOTER */
+/* ===================================================== */
+
+.custom-footer {
+    background-color: var(--color-primario);
+}
+
+.custom-footer i {
+    transition: var(--transicion);
+}
+
+.custom-footer i:hover {
+    color: var(--color-acento);
+    transform: scale(1.2);
+}
+
+/* ===================================================== */
+/* ANIMACIÓN LATIDO PARA FUTURAS IMÁGENES CLIENTES */
+/* ===================================================== */
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.latido {
+    animation: latido 1.5s infinite;
+}
+
+/* ===================================================== */
+/* BORDE ARCOÍRIS ANIMADO (PARA TESTIMONIOS) */
+/* ===================================================== */
+
+@keyframes arcoiris {
+    0% { border-color: red; }
+    20% { border-color: orange; }
+    40% { border-color: yellow; }
+    60% { border-color: green; }
+    80% { border-color: blue; }
+    100% { border-color: violet; }
+}
+
+.borde-arcoiris {
+    border: 4px solid red;
+    animation: arcoiris 5s linear infinite;
+    border-radius: 15px;
+}
+
+/* ===================================================== */
+/* RESPONSIVE DESIGN */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        height: 70vh;
+    }
+
+    .team-img {
+        width: 120px;
+        height: 120px;
+    }
+
+}
